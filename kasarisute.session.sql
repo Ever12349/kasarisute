@@ -1,0 +1,1 @@
+SELECT * from userid_info LIMIT 0,50

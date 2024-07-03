@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+---
+#development
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.50.199:3306/kasarisute
+      username: root
+      password: YYCMmZHnrK!EzxJP
+
+---
+#product
+spring:
+  config:
+    activate: 
+      on-profile: prod
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.50.199:3306/kasarisute
+      username: root
+      password: YYCMmZHnrK!EzxJP
