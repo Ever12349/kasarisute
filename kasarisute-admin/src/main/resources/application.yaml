@@ -1,10 +1,15 @@
 spring:
+  main:
+    allow-bean-definition-overriding: true
   profiles:
     active: dev
-
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
 server:
   port: 8080
-
 ---
 #development
 spring:
@@ -14,7 +19,7 @@ spring:
   datasource:
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://192.168.50.199:3306/kasarisute
+      jdbc-url: jdbc:mysql://192.168.50.199:3306/kasarisute?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=UTC
       username: root
       password: YYCMmZHnrK!EzxJP
 
