@@ -9,4 +9,5 @@ import lombok.Data;
 public class ResponseMsg {
     public static final String Ok = "操作成功";
     public static final String USER_IS_EXISTS = "该用户已经存在";
+    public static final String DATA_ERROR = "数据异常";
 }

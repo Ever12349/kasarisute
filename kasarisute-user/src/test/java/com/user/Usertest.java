@@ -1,7 +1,6 @@
 package com.user;
 
 import java.time.Instant;
-import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
