@@ -4,9 +4,9 @@ package com.kasarisute.common;
 import lombok.Data;
 
 @Data
-public class ResponseData {
+public class ResponseData<T> {
     private Integer code = ResponseCode.OK;
-    private Object data;
+    private T data;
     private String msg = ResponseMsg.Ok;
     private boolean success=true;
 }

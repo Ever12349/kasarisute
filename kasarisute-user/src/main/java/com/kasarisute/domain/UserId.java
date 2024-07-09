@@ -14,8 +14,8 @@ public class UserId {
     @Id
     @GeneratedValue
     private Long id;
-    @Column(name="uid",nullable = false)
+    @Column(name = "uid", unique = true, nullable = false)
     private String uid;
-    @Column(name="user_code",nullable = false)
+    @Column(name = "user_code", nullable = false)
     private String userCode;
 }

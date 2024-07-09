@@ -2,7 +2,9 @@ package com.kasarisute.common;
 
 import com.kasarisute.domain.User;
 
+import lombok.Data;
 
+@Data
 public class UserInfomation {
     private User userInfo;
 
