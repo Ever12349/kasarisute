@@ -13,12 +13,9 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
-<<<<<<< HEAD
 import jakarta.persistence.FetchType;
-=======
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
->>>>>>> 3d62cbb7984e3b1b67797e7050581d706ea8826e
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -42,13 +39,8 @@ public class User {
     // @GeneratedValue
     private String uid;
 
-<<<<<<< HEAD
     @OneToOne(cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @JoinColumn(name = "pwId")
-=======
-    @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "uid",referencedColumnName = "uid")
->>>>>>> 3d62cbb7984e3b1b67797e7050581d706ea8826e
     private UserPw userPw;
 
     @Column(name = "user_name", nullable = true, length = 16)
