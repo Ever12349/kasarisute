@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.kasarisute.KasarisuteUserApplication;
+import com.kasarisute.domain.User;
+import com.kasarisute.domain.UserPw;
 import com.kasarisute.repositories.UserIdRepository;
 import com.kasarisute.repositories.UserRepository;
 
@@ -17,9 +19,18 @@ public class Usertest {
 
     @Test
     public void userRepositoryTest() {
-        // BCryptPasswordEncoder encoder  = new BCryptPasswordEncoder(16);
-        // String result = encoder.encode("123456");
-        // String pwBCryptEncode = UserUtils.pwBCryptEncode("123456");
-        // System.err.println(pwBCryptEncode);
+        User user = new User();
+        UserPw userPw = new UserPw();
+        userPw.setPassword("123445");
+        userPw.setUid("1720530751409229");
+        
+        user.setUid("1720530751409229");
+        user.setMail("qianxiao0762@outlook.com");
+        user.setUserName("QianXiao");
+
+        user.setUserPw(userPw);
+
+        userRepository.save(user);
+        // 1720530751409229	2024-07-09 13:12:31.451587	qianxiao0762@outlook.com	5	USER	100	2024-07-09 13:12:31.538811	QianXiao	1
     }
 }

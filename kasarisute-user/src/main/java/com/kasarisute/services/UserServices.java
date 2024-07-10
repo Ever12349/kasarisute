@@ -8,4 +8,5 @@ import com.kasarisute.common.signInData;
 public interface UserServices {
    ResponseData<UserInfomation> userSignin(signInData signInData);
    ResponseData<UserInfomation> userLogin(LoginReq loginReq);
+   ResponseData<UserInfomation> getUserInfo(String userId);
 }

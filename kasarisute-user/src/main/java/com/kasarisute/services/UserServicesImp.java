@@ -35,15 +35,17 @@ public class UserServicesImp implements UserServices {
             if (user == null) {
                 userInfo.setUid(newUid);
                 userPw.setUid(newUid);
+
                 user = userRepository.saveAndFlush(userInfo);
 
-                User ReqUserInfo = userRepository.findByUid(user.getUid());
-                UserInfomation userInfomation = new UserInfomation(ReqUserInfo);
+                
+                // User ReqUserInfo = userRepository.findByUid(user.getUid());
+                UserInfomation userInfomation = new UserInfomation(user);
                 req.setData(userInfomation);
             }
         }
 
-        return user;
+        return userInfo;
     }
 
     @Override
@@ -98,8 +100,25 @@ public class UserServicesImp implements UserServices {
     public ResponseData<UserInfomation> userLogin(LoginReq loginReq) {
         ResponseData<UserInfomation> req = new ResponseData<>();
 
+        String userIdentitiy = loginReq.getUserIdentitiy();
+        String password = loginReq.getPassword();
+
+        
+
         // User userInfo = userRepository.findOne()
 
         return req;
     }
+
+    @Override
+    public ResponseData<UserInfomation> getUserInfo(String userId) {
+        ResponseData<UserInfomation> req = new ResponseData<>();
+
+
+
+        return req;
+
+    }
+
+    
 }
