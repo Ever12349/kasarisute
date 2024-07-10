@@ -16,6 +16,7 @@ import com.kasarisute.common.ResponseData;
 import com.kasarisute.common.UserInfomation;
 import com.kasarisute.common.signInData;
 import com.kasarisute.services.UserServices;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("")
@@ -26,20 +27,30 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> userLoginStart(@RequestBody LoginReq loginReq) {
         HttpHeaders responseHeaders = new HttpHeaders();
-        return new ResponseEntity<ResponseData<UserInfomation>>(userServices.userLogin(loginReq), responseHeaders, HttpStatus.OK);
+        return new ResponseEntity<ResponseData<UserInfomation>>(userServices.userLogin(loginReq), responseHeaders,
+                HttpStatus.OK);
     }
 
     @PostMapping("/signin")
     public ResponseEntity<?> userSignStart(@RequestBody signInData signInData) {
         HttpHeaders responseHeaders = new HttpHeaders();
-        return new ResponseEntity<ResponseData<UserInfomation>>(userServices.userSignin(signInData), responseHeaders, HttpStatus.OK);
+        return new ResponseEntity<ResponseData<UserInfomation>>(userServices.userSignin(signInData), responseHeaders,
+                HttpStatus.OK);
+    }
+
+    @GetMapping(name = "/user/{userId}")
+    public ResponseEntity<ResponseData<UserInfomation>> getUserInfo(@PathVariable String userId) {
+
+        HttpHeaders responseHttpHeaders = new HttpHeaders();
+        return new ResponseEntity<ResponseData<UserInfomation>>(userServices.getUserInfo(userId), responseHttpHeaders,
+                HttpStatus.OK);
     }
 
     // @GetMapping("/{id}")
     // public ResponseEntity<?> getMethodName(@PathVariable String id) {
 
-    //     ResponseData reqData = new ResponseData();
-    //     reqData.setData(id);
-    //     return ResponseEntity.ok().body(id);
+    // ResponseData reqData = new ResponseData();
+    // reqData.setData(id);
+    // return ResponseEntity.ok().body(id);
     // }
 }

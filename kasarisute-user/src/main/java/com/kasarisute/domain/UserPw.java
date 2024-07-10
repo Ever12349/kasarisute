@@ -15,18 +15,17 @@ import lombok.Data;
 @Entity
 @Table(name = "user_pw")
 public class UserPw {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Comment("Id")
-    // @Column(name = "id", nullable = false)
-    // @ColumnDefault("1L")
-    // private Long id;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Comment("ID")
-    @Column(name = "pwId")
-    private Long pw_id;
-
+    @Column(name = "id", nullable = false)
+    // @ColumnDefault("1L")
+    private Long id;
+    // @Id
+    // @GeneratedValue(strategy = GenerationType.AUTO)
+    // @Comment("ID")
+    // @Column(name = "pw_id")
+    // private Long pwId;
+    // @Id
     @Column(name = "uid", unique = true, length = 16)
     @Comment("用户ID")
     private String uid;

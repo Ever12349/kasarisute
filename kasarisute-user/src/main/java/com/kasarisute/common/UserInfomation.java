@@ -16,6 +16,8 @@ public class UserInfomation {
         this.userInfo = userInfo;
     }
 
+    public UserInfomation() {}
+
     public UserInfomation(User userInfo) {
         this.userInfo = userInfo;
     }

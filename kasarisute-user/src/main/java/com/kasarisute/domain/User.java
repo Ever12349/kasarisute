@@ -13,7 +13,12 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+<<<<<<< HEAD
 import jakarta.persistence.FetchType;
+=======
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+>>>>>>> 3d62cbb7984e3b1b67797e7050581d706ea8826e
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -28,18 +33,22 @@ import lombok.Data;
 @EntityListeners(AuditingEntityListener.class)
 // @DynamicInsert
 public class User {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
-    // @Comment("Id")
-    // private Long id;
     @Id
-    @Column(name = "uid", unique = true, length = 16)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id",unique = true)
+    private Long id;
+
+    @Column(name = "uid",insertable = false,updatable = false, unique = true, length = 16)
     // @GeneratedValue
-    @Comment("用户ID")
     private String uid;
 
+<<<<<<< HEAD
     @OneToOne(cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @JoinColumn(name = "pwId")
+=======
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "uid",referencedColumnName = "uid")
+>>>>>>> 3d62cbb7984e3b1b67797e7050581d706ea8826e
     private UserPw userPw;
 
     @Column(name = "user_name", nullable = true, length = 16)
