@@ -30,13 +30,13 @@ public class UserServicesImp implements UserServices {
             userPw.setPwIsCrypt(true);
         }
         if (userInfo.getUid() == null) {
-            String newUid = UserUtils.generateUid();
-            user = userRepository.findByUid(newUid);
+            Long newUserCode = UserUtils.generateUserCode();
+            user = userRepository.findByUid(newUserCode);
             if (user == null) {
-                userInfo.setUid(newUid);
-                userPw.setUid(newUid);
+                userInfo.setUserCode(newUserCode);
+                userPw.setUserCode(newUserCode);
 
-                user = userRepository.saveAndFlush(userInfo);
+                user = userRepository.save(userInfo);
 
                 
                 // User ReqUserInfo = userRepository.findByUid(user.getUid());
@@ -111,13 +111,21 @@ public class UserServicesImp implements UserServices {
     }
 
     @Override
-    public ResponseData<UserInfomation> getUserInfo(String userId) {
+    public ResponseData<UserInfomation> getUserInfo(Long userId) {
         ResponseData<UserInfomation> req = new ResponseData<>();
 
+        User user = userRepository.findByUid(userId);
 
+        UserPw userPw = user.getUserPw();
+        System.out.println("userPw:" + userPw);
+        
+        
+        UserInfomation userInfomation = new UserInfomation();
+        userInfomation.setUserInfo(user);
+        
+        req.setData(userInfomation);
 
         return req;
-
     }
 
     

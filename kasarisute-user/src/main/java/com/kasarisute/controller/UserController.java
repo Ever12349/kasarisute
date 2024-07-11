@@ -18,7 +18,7 @@ import com.kasarisute.common.signInData;
 import com.kasarisute.services.UserServices;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserServices userServices;
@@ -37,8 +37,8 @@ public class UserController {
                 HttpStatus.OK);
     }
 
-    @GetMapping(name = "/user/{userId}")
-    public ResponseEntity<ResponseData<UserInfomation>> getUserInfo(@PathVariable String userId) {
+    @GetMapping(name = "/{userId}")
+    public ResponseEntity<ResponseData<UserInfomation>> getUserInfo(@PathVariable Long userId) {
 
         HttpHeaders responseHttpHeaders = new HttpHeaders();
         return new ResponseEntity<ResponseData<UserInfomation>>(userServices.getUserInfo(userId), responseHttpHeaders,

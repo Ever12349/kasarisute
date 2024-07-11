@@ -11,7 +11,7 @@ public interface UserRepository
 
     User findByMail(String mail);
 
-    User findByUid(String uid);
+    User findByUid(Long uid);
 
     // User findById(Long id);
 }
