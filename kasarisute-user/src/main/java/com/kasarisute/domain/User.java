@@ -9,13 +9,12 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.kasarisute.sequenceGenerator.UserIdGenerator;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -31,16 +30,15 @@ import lombok.Data;
 // @DynamicInsert
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id",unique = true)
-    private Long id;
+    @UserIdGenerator(dataCenterId = 1, machineId = 2)
+    @Column(name = "uid", unique = true)
+    private Long uid;
 
-    @Column(name = "uid",insertable = false,updatable = false, unique = true, length = 16)
-    // @GeneratedValue
-    private String uid;
+    @Column(name = "user_code", insertable = false, updatable = false, unique = true, length = 16)
+    private Long UserCode;
 
-    @OneToOne(cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
-    @JoinColumn(name = "pwId")
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "user_code", referencedColumnName = "user_code")
     private UserPw userPw;
 
     @Column(name = "user_name", nullable = true, length = 16)

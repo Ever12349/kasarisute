@@ -13,11 +13,11 @@ public class UserUtils {
         return encoder.encode(pw);
     }
 
-    public static String generateUid(){
+    public static Long generateUserCode(){
         long timestamp = new Date().getTime();
         Random random = new Random();
         int randomNum = random.nextInt(1000);
-        return String.valueOf(timestamp) + String.format("%03d", randomNum);
+        return Long.parseLong(String.valueOf(timestamp) + String.format("%03d", randomNum));
     }
 
     public static String sha256(String str) {
