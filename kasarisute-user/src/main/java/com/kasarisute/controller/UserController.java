@@ -16,7 +16,6 @@ import com.kasarisute.common.ResponseData;
 import com.kasarisute.common.UserInfomation;
 import com.kasarisute.common.signInData;
 import com.kasarisute.services.UserServices;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("")
