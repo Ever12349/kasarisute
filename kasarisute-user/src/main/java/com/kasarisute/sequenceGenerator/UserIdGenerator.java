@@ -8,8 +8,6 @@ import java.lang.annotation.Target;
 import org.hibernate.annotations.IdGeneratorType;
 import org.hibernate.annotations.ValueGenerationType;
 
-// @IdGeneratorType(org.hibernate.id.uuid.UuidGenerator.class)
-// @ValueGenerationType(generatedBy = org.hibernate.id.uuid.UuidGenerator.class)
 @IdGeneratorType(UserIdGeneratorV1.class)
 @ValueGenerationType(generatedBy = UserIdGeneratorV1.class)
 @Retention(RetentionPolicy.RUNTIME)

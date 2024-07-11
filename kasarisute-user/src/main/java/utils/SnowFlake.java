@@ -54,10 +54,10 @@ public class SnowFlake {
     */
    public SnowFlake(long dataCenterId, long machineId) {
        if (dataCenterId > MAX_DATA_CENTER_NUM || dataCenterId < 0) {
-           throw new IllegalArgumentException("DtaCenterId can't be greater than MAX_DATA_CENTER_NUM or less than 0！");
+           throw new IllegalArgumentException("DtaCenterId can't be greater than "+ MAX_DATA_CENTER_NUM + " or less than 0！");
        }
        if (machineId > MAX_MACHINE_NUM || machineId < 0) {
-           throw new IllegalArgumentException("MachineId can't be greater than MAX_MACHINE_NUM or less than 0！");
+           throw new IllegalArgumentException("MachineId can't be greater than "+ MAX_MACHINE_NUM +" or less than 0！");
        }
        this.dataCenterId = dataCenterId;
        this.machineId = machineId;

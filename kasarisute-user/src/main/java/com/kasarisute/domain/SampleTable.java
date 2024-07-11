@@ -12,7 +12,7 @@ import lombok.Data;
 @Table(name = "sample_table")
 public class SampleTable {
     @Id
-    @UserIdGenerator(dataCenterId = 10,machineId = 2)
+    @UserIdGenerator(dataCenterId = 1,machineId = 2)
     // @GeneratedValue
     // @UuidGenerator
     // UUID id;
