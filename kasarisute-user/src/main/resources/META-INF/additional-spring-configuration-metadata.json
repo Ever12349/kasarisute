@@ -8,5 +8,20 @@
     "name": "spring.jpa.hibernate.highlight_sql",
     "type": "java.lang.String",
     "description": "A description for 'spring.jpa.hibernate.highlight_sql'"
+  },
+  {
+    "name": "markerhub.jwt.header",
+    "type": "java.lang.String",
+    "description": "A description for 'markerhub.jwt.header'"
+  },
+  {
+    "name": "markerhub.jwt.expire",
+    "type": "java.lang.String",
+    "description": "A description for 'markerhub.jwt.expire'"
+  },
+  {
+    "name": "markerhub.jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'markerhub.jwt.secret'"
   }
 ]}

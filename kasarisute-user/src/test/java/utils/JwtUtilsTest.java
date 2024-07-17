@@ -10,7 +10,6 @@ import com.kasarisute.KasarisuteUserApplication;
 import com.kasarisute.utils.JwtUtils;
 
 import io.jsonwebtoken.Claims;
-import lombok.experimental.var;
 
 @SpringBootTest(classes = KasarisuteUserApplication.class)
 public class JwtUtilsTest {

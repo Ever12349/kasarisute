@@ -10,7 +10,6 @@ import javax.crypto.SecretKey;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import ch.qos.logback.core.util.StringUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -76,14 +75,22 @@ public class JwtUtils {
         }
     }
 
-    public Claims getClaimsByAuthorizationToken(String token) {
+    public static String authorizationHandler(String authorization) {
         String beareString = "Bearer ";
-        if (StringUtil.isNullOrEmpty(token))
-            return null;
-        if (token.startsWith(beareString)) {
-            return this.getClaimsByToken(token.substring(beareString.length()));
+        if (authorization.startsWith(beareString)) {
+            return authorization.substring(beareString.length());
         }
-        return this.getClaimsByToken(token);
+        return authorization;
+    }
+
+    public Claims getClaimsByAuthorizationToken(String token) {
+        return this.getClaimsByToken(authorizationHandler(token));
+    }
+
+    public static boolean tokenIsEpual(String jwt, String jwt2) {
+        String jwtOne = authorizationHandler(jwt);
+        String jwtTwo = authorizationHandler(jwt2);
+        return jwtOne.equals(jwtTwo);
     }
 
     public Boolean tokenIsExpired(Claims claims) {

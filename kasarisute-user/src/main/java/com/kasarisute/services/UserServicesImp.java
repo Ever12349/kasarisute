@@ -132,7 +132,7 @@ public class UserServicesImp implements UserServices {
     @Transactional
     @Override
     public ResponseData<UserlogReqInfo> userLogin(LoginReq loginReq, HttpServletRequest request,
-            HttpServletResponse response) {
+            HttpServletResponse response) throws RuntimeException {
         ResponseData<UserlogReqInfo> res = new ResponseData<>();
 
         String userIdentitiy = loginReq.getUserIdentitiy();
