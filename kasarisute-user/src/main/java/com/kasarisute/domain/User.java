@@ -15,6 +15,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -35,9 +36,9 @@ public class User {
     private Long uid;
 
     @Column(name = "user_code", insertable = false, updatable = false, unique = true, length = 16)
-    private Long UserCode;
+    private Long userCode;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.PERSIST ,fetch = FetchType.LAZY)
     @JoinColumn(name = "user_code", referencedColumnName = "user_code")
     private UserPw userPw;
 
@@ -58,8 +59,8 @@ public class User {
     @Column(name = "roles", nullable = false, length = 64)
     @Comment("用户的角色")
     @ColumnDefault("'USER'")
-    @Value("'USER'")
-    private String roles = "USER";
+    @Value("'ROLE_USER'")
+    private String roles = "ROLE_USER";
 
     @Column(name = "update_time", nullable = true)
     @Comment("更新时间")
@@ -75,7 +76,7 @@ public class User {
 
     @Column(name = "status", nullable = true)
     @Comment("状态 100未验证,200正常,300异常,400已经注销")
-    @ColumnDefault("100")
-    @Value("100")
-    private Integer status = 100;
+    @ColumnDefault("200")
+    @Value("200")
+    private Integer status = 200;
 }

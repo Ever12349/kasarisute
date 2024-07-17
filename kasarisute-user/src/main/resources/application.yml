@@ -7,10 +7,16 @@ spring:
         "[format_sql]": true
         "[highlight_sql]": true
         jdbc:
-          time_zone: UTC
+          "[time_zone]": UTC
     hibernate:
       ddl-auto: update
     show-sql: true
+
+markerhub:
+  jwt: 
+    header: Authorization
+    expire: 120 #天数
+    secret: hduqeg823ybsahf9qei12efiuhdfe3th
 
 server:
   port: 8080

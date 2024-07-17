@@ -1,24 +1,24 @@
 package com.kasarisute.common;
 
-import com.kasarisute.domain.User;
+import com.kasarisute.dataClass.UserClass;
 
 import lombok.Data;
 
 @Data
-public class UserInfomation {
-    private User userInfo;
+public class UserInfomation<T extends UserClass> {
+    private T userInfo;
 
-    public User getUserInfo() {
+    public T getUserInfo() {
         return userInfo;
     }
 
-    public void setUserInfo(User userInfo) {
+    public void setUserInfo(T userInfo) {
         this.userInfo = userInfo;
     }
 
     public UserInfomation() {}
 
-    public UserInfomation(User userInfo) {
+    public UserInfomation(T userInfo) {
         this.userInfo = userInfo;
     }
 

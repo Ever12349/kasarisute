@@ -10,7 +10,7 @@ import org.hibernate.generator.EventTypeSets;
 import org.hibernate.generator.GeneratorCreationContext;
 import org.hibernate.id.factory.spi.CustomIdGeneratorCreationContext;
 
-import utils.SnowFlake;
+import com.kasarisute.utils.SnowFlake;
 
 class Generator<T> {
     private T generatorValue;

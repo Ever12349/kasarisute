@@ -1,4 +1,4 @@
-package utils;
+package com.kasarisute.utils;
 
 public class SnowFlake {
 
