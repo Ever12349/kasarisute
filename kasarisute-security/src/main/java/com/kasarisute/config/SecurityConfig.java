@@ -26,6 +26,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.access.intercept.RequestAuthorizationContext;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 
 import com.kasarisute.security.JwtTokenOncePerRequestFilter;
 
@@ -64,9 +65,9 @@ public class SecurityConfig {
             })
             .authorizeHttpRequests((authorizeHttpRequests) -> {
                 authorizeHttpRequests
-                    // .requestMatchers(RegexRequestMatcher.regexMatcher("/user/[0-9]+")).hasAuthority("ROLE_ADMIN")
+                    .requestMatchers(RegexRequestMatcher.regexMatcher("/user/[0-9]+")).hasAuthority("ROLE_ADMIN")
                     .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                    .anyRequest().access(authz)
+                    .anyRequest().authenticated()
                     ;
             })
             .exceptionHandling((exceptionHandling) -> {

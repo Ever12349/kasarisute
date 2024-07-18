@@ -45,21 +45,4 @@ public class UserResponseException {
                 responseHeaders,
                 HttpStatus.UNAUTHORIZED);
     }
-
-    // public ModelAndView resolveException(@Nullable HttpServletRequest request,
-    // @Nullable HttpServletResponse response,
-    // @Nullable Object arg2,
-    // @Nullable Exception exception) {
-
-    // // response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-    // // response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-    // // OutputStream responseStream = response.getOutputStream();
-    // // ObjectMapper mapper = new ObjectMapper();
-    // // mapper.writeValue(responseStream, "错误");
-    // // responseStream.flush();
-
-    // // return null;
-
-    // }
-
 }
