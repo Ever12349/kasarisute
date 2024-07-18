@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.kasarisute</groupId>
         <artifactId>kasarisute</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.kasarisute</groupId>
     <artifactId>kasarisute-admin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${kasarisute.version}</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -21,7 +21,17 @@
         <dependency>
             <groupId>com.kasarisute</groupId>
             <artifactId>kasarisute-task</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${kasarisute.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kasarisute</groupId>
+            <artifactId>kasarisute-user</artifactId>
+            <version>${kasarisute.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kasarisute</groupId>
+            <artifactId>kasarisute-security</artifactId>
+            <version>${kasarisute.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,6 +1,6 @@
 package com.kasarisute.common;
 
-import com.kasarisute.domain.User;
+import com.kasarisute.entitys.User;
 
 import lombok.Data;
 

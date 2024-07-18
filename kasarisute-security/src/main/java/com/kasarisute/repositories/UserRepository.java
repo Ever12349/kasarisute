@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import com.kasarisute.entitys.User;
 
+
 public interface UserRepository
         extends JpaRepository<User, Long>,JpaSpecificationExecutor<User> {
 
@@ -16,3 +17,4 @@ public interface UserRepository
 
     // User findById(Long id);
 }
+

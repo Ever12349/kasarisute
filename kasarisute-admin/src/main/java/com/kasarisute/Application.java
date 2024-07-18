@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-@Import({KasarisuteTaskApplicaton.class })
+@Import({KasarisuteTaskApplicaton.class,KasarisuteUserApplication.class })
 public class Application {
     public static void main(String[] args) {
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"));

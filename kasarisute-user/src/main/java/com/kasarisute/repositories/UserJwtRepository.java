@@ -2,7 +2,7 @@ package com.kasarisute.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.kasarisute.domain.UserJwt;
+import com.kasarisute.entitys.UserJwt;
 
 
 public interface UserJwtRepository  extends JpaRepository<UserJwt,Long>{

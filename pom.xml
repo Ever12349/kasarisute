@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.kasarisute</groupId>
 	<artifactId>kasarisute</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>kasarisute-admin</module>
@@ -37,6 +37,7 @@
 	<properties>
 		<java.version>17</java.version>
 		<jjwt.version>0.12.3</jjwt.version>
+		<kasarisute.version>1.0-SNAPSHOT</kasarisute.version>
 	</properties>
 	<build>
 		<plugins>
@@ -49,10 +50,10 @@
 
 	<dependencies>
 		<dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>annotationProcessor</scope>
-        </dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>annotationProcessor</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
