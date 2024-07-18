@@ -17,6 +17,7 @@
 		<module>kasarisute-admin</module>
 		<module>kasarisute-user</module>
 		<module>kasarisute-task</module>
+		<module>kasarisute-security</module>
 	</modules>
 	<name>kasarisute</name>
 	<description>Demo project for Spring Boot</description>
@@ -47,6 +48,12 @@
 	</build>
 
 	<dependencies>
+		<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>annotationProcessor</scope>
+        </dependency>
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
