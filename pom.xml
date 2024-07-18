@@ -16,6 +16,7 @@
 	<modules>
 		<module>kasarisute-admin</module>
 		<module>kasarisute-user</module>
+		<module>kasarisute-task</module>
 	</modules>
 	<name>kasarisute</name>
 	<description>Demo project for Spring Boot</description>
