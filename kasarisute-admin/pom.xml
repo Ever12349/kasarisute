@@ -23,15 +23,5 @@
             <artifactId>kasarisute-task</artifactId>
             <version>${kasarisute.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.kasarisute</groupId>
-            <artifactId>kasarisute-user</artifactId>
-            <version>${kasarisute.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.kasarisute</groupId>
-            <artifactId>kasarisute-security</artifactId>
-            <version>${kasarisute.version}</version>
-        </dependency>
     </dependencies>
 </project>
