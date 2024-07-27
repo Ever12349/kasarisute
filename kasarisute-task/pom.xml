@@ -11,7 +11,7 @@
 
     <groupId>com.kasarisute</groupId>
     <artifactId>kasarisute-task</artifactId>
-    <version>${kasarisute.version}</version>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,10 +19,10 @@
     </properties>
 
     <dependencies>
-        <!-- <dependency>
+        <dependency>
             <groupId>com.kasarisute</groupId>
-            <artifactId>kasarisute-security</artifactId>
+            <artifactId>kasarisute-utils</artifactId>
             <version>${kasarisute.version}</version>
-        </dependency> -->
+        </dependency>
     </dependencies>
 </project>

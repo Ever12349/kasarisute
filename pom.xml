@@ -15,9 +15,8 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>kasarisute-admin</module>
-		<module>kasarisute-user</module>
 		<module>kasarisute-task</module>
-		<module>kasarisute-security</module>
+		<module>kasarisute-utils</module>
 	</modules>
 	<name>kasarisute</name>
 	<description>Demo project for Spring Boot</description>
@@ -52,7 +51,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>annotationProcessor</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
