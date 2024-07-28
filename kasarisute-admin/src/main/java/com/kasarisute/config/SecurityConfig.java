@@ -31,7 +31,7 @@ import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 import com.kasarisute.security.JwtTokenOncePerRequestFilter;
 
 @Configuration
-@EnableWebSecurity(debug = true)
+@EnableWebSecurity(debug = false)
 public class SecurityConfig {
 
     private static final String[] URL_WHITE_URL = { "/user/login", "/user/signin" };

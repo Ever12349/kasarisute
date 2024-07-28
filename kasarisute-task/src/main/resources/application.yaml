@@ -14,7 +14,7 @@ spring:
 
 markerhub:
   jwt: 
-    header: Authorization
+    header: Authorizationss
     expire: 120 #天数
     secret: hduqeg823ybsahf9qei12efiuhdfe3th
 

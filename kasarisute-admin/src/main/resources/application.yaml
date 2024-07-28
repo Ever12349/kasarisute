@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: dev,utilss
   jpa:
     properties:
       hibernate:
@@ -10,8 +10,18 @@ spring:
           "[time_zone]": UTC
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
 
+# logging:
+#   level:
+#     root: "warn"
+#     "[org.springframework.web]": "debug"
+#     "[org.hibernate]": "error"
+
+
+# 日志配置
+logging:
+  config: classpath:logback-spring.xml  
 markerhub:
   jwt: 
     header: Authorization

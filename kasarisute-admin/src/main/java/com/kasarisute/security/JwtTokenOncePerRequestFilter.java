@@ -3,6 +3,7 @@ package com.kasarisute.security;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -51,11 +52,11 @@ public class JwtTokenOncePerRequestFilter extends OncePerRequestFilter {
             Claims claims = jwtUtils.getClaimsByAuthorizationToken(jwt);
 
             if (claims == null) {
-                throw new JwtException("token 不合法");
+                throw new JwtException("token illegally");
             }
 
             if (jwtUtils.tokenIsExpired(claims)) {
-                throw new JwtException("token 已经过期");
+                throw new JwtException("token is expired");
             }
 
             String userName = claims.get("userName").toString();
@@ -94,7 +95,7 @@ public class JwtTokenOncePerRequestFilter extends OncePerRequestFilter {
 
             filterChain.doFilter(request, response);
         } catch (Exception e) {
-            System.err.println(e);
+            
             handlerExceptionResolver.resolveException(request, response, null, e);
         }
 

@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 public class AuthenticationEvents {
     @EventListener
     public void onSuccess(AuthenticationSuccessEvent success) {
-        System.out.println("认证成功");
+        // System.out.println("认证成功");
 
     }
 
     @EventListener
     public void onFailure(AbstractAuthenticationFailureEvent failures) {
-        System.out.println("认证失败");
+        // System.out.println("认证失败");
         // System.out.println(failures.getException());
     }
 }

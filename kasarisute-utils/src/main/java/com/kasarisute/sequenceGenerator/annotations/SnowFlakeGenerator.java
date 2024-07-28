@@ -1,4 +1,4 @@
-package com.kasarisute.sequenceGenerator;
+package com.kasarisute.sequenceGenerator.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,12 +8,14 @@ import java.lang.annotation.Target;
 import org.hibernate.annotations.IdGeneratorType;
 import org.hibernate.annotations.ValueGenerationType;
 
-@IdGeneratorType(UserIdGeneratorV1.class)
-@ValueGenerationType(generatedBy = UserIdGeneratorV1.class)
+@IdGeneratorType(com.kasarisute.sequenceGenerator.SnowFlakeGenerator.class)
+@ValueGenerationType(generatedBy = com.kasarisute.sequenceGenerator.SnowFlakeGenerator.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.FIELD, ElementType.METHOD })
-public @interface UserIdGenerator {
+
+public @interface SnowFlakeGenerator {
     public long dataCenterId() default 0L;
 
     public long machineId() default 0L;
+
 }

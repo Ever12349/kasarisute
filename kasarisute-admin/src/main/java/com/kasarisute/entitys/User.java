@@ -9,7 +9,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import com.kasarisute.sequenceGenerator.UserIdGenerator;
+import com.kasarisute.sequenceGenerator.annotations.SnowFlakeGenerator;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -31,7 +31,7 @@ import lombok.Data;
 // @DynamicInsert
 public class User {
     @Id
-    @UserIdGenerator(dataCenterId = 1, machineId = 2)
+    @SnowFlakeGenerator(dataCenterId = 1, machineId = 2)
     @Column(name = "uid", unique = true)
     private Long uid;
 

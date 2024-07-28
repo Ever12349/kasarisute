@@ -31,5 +31,10 @@ public class UserlogReqInfo {
         this.userInfo = userInfo;
     }
 
+    @Override
+    public String toString() {
+        return "UserlogReqInfo [userInfo=" + userInfo + ", authorization=" + authorization + "]";
+    }
+
     
 }

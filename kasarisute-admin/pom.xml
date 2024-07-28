@@ -28,5 +28,10 @@
             <artifactId>kasarisute-utils</artifactId>
             <version>${kasarisute.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.kasarisute</groupId>
+            <artifactId>kasarisute-config</artifactId>
+            <version>${kasarisute.version}</version>
+        </dependency>
     </dependencies>
 </project>
