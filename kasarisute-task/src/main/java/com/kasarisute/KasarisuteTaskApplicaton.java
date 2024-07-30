@@ -1,15 +1,26 @@
 package com.kasarisute;
-import java.util.TimeZone;
+import org.springframework.boot.autoconfigure.AutoConfigurationExcludeFilter;
+import org.springframework.boot.context.TypeExcludeFilter;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
+@Configuration
+@ComponentScan(
+   excludeFilters = {@Filter(
+   type = FilterType.CUSTOM,
+   classes = {TypeExcludeFilter.class}
+), @Filter(
+   type = FilterType.CUSTOM,
+   classes = {AutoConfigurationExcludeFilter.class}
+)}
+)
 public class KasarisuteTaskApplicaton {
     public static void main(String[] args) {
 
-        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
-        SpringApplication.run(KasarisuteTaskApplicaton.class, args);
+        // TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        // SpringApplication.run(KasarisuteTaskApplicaton.class, args);
     }
 
 }
