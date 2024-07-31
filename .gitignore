@@ -39,3 +39,8 @@ kasarisute-admin/logs/log_debug.log
 kasarisute-admin/logs/log_error.log
 kasarisute-admin/logs/log_info.log
 kasarisute-admin/logs/log_warn.log
+kasarisute-admin/logs/error/log-error-2024-07-30.0.log
+kasarisute-admin/logs/info/log-info-2024-07-30.0.log
+kasarisute-admin/logs/warn/log-warn-2024-07-30.0.log
+logs/info/log-info-2024-07-30.0.log
+logs/warn/log-warn-2024-07-30.0.log
