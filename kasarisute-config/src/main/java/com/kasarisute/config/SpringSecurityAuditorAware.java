@@ -12,6 +12,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @Configuration
 public class SpringSecurityAuditorAware implements AuditorAware<Long> {
 
+    @SuppressWarnings("null")
     @Override
     public Optional<Long> getCurrentAuditor() {
         try {
