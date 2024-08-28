@@ -20,8 +20,6 @@ public class Application {
         SpringApplication application = new SpringApplication(Application.class);
         application.setBannerMode(Banner.Mode.OFF);
         application.setAdditionalProfiles("dev");
-
         application.run(args);
-
     }
 }

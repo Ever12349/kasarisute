@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kasarisute.common.LoginReq;
@@ -21,6 +22,7 @@ import com.kasarisute.services.UserServices;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 
 @RestController
 @RequestMapping("/user")
@@ -65,6 +67,24 @@ public class UserController {
                 HttpHeaders responseHttpHeaders = new HttpHeaders();
                 return new ResponseEntity<ResponseData<UserInfomation<UserClass>>>(
                                 userServices.getUserInfo(userId),
+                                responseHttpHeaders,
+                                HttpStatus.OK);
+        }
+
+        @GetMapping(value = "/check")
+        public ResponseEntity<?> requestMethodName(@RequestParam String param) {
+                System.out.println("/check");
+                HttpHeaders responseHttpHeaders = new HttpHeaders();
+
+            return new ResponseEntity<>("{}",responseHttpHeaders,HttpStatus.OK);
+        }
+        
+
+        @GetMapping("/online")
+        public ResponseEntity<?> getMethodName() {
+                HttpHeaders responseHttpHeaders = new HttpHeaders();
+                return new ResponseEntity<>(
+                                "{}",
                                 responseHttpHeaders,
                                 HttpStatus.OK);
         }

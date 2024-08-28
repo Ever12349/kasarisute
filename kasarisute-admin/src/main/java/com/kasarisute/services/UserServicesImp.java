@@ -156,7 +156,7 @@ public class UserServicesImp implements UserServices {
             this.securityContextRepository.saveContext(context, request, response);
 
             UserlogReqInfo jwtReturnUser = generateJwtReturnUser(user);
-            ;
+            
             res.setData(jwtReturnUser);
 
         } else {

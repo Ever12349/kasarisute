@@ -20,6 +20,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -40,8 +41,16 @@ public class JwtTokenOncePerRequestFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException, JwtException {
         try {
-
             String jwt = request.getHeader(jwtUtils.getHeader());
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("session-token")) {
+                        jwt = cookie.getValue();
+                        break;
+                    }
+                }
+            }
 
             if (StringUtil.isNullOrEmpty(jwt)) {
                 filterChain.doFilter(request, response);
@@ -94,7 +103,7 @@ public class JwtTokenOncePerRequestFilter extends OncePerRequestFilter {
 
             filterChain.doFilter(request, response);
         } catch (Exception e) {
-            
+
             handlerExceptionResolver.resolveException(request, response, null, e);
         }
 
