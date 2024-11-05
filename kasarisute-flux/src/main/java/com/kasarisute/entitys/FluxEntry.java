@@ -11,15 +11,21 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @Entity
-@Table(name = "task_list_info")
+@Table(name = "flux_entry_info")
 @EqualsAndHashCode(callSuper = true)
-public class Task extends TableBaseEntity {
+public class FluxEntry extends BaseEntity {
     @Id
-    @Column(name = "task_id")
+    @Column(name = "entry_id")
+    // @UuidGenerator
     @SnowFlakeGenerator
     private Long id;
 
-    @Column(name="task_name")
-    private String taskName;
+    @Column(name = "entry_name")
+    private String title;
 
+    @Column(name = "entry_amount")
+    private String amount;
+
+    @Column(name = "entry_category")
+    private String category;
 }

@@ -15,9 +15,9 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>kasarisute-admin</module>
-		<module>kasarisute-task</module>
 		<module>kasarisute-utils</module>
 		<module>kasarisute-config</module>
+		<module>kasarisute-flux</module>
 	</modules>
 	<name>kasarisute</name>
 	<description>Demo project for Spring Boot</description>

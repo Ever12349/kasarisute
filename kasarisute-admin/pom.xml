@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.kasarisute</groupId>
-            <artifactId>kasarisute-task</artifactId>
+            <artifactId>kasarisute-flux</artifactId>
             <version>${kasarisute.version}</version>
         </dependency>
         <dependency>

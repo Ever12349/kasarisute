@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-@Import({ KasarisuteTaskApplicaton.class, KasarisuteConfig.class })
+@Import({ KasarisuteFluxApplication.class, KasarisuteConfig.class })
 @EnableAspectJAutoProxy
 public class Application {
     public static void main(String[] args) {

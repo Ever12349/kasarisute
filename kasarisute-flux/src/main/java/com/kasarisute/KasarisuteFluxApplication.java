@@ -16,11 +16,8 @@ import org.springframework.context.annotation.FilterType;
    classes = {AutoConfigurationExcludeFilter.class}
 )}
 )
-public class KasarisuteTaskApplicaton {
+public class KasarisuteFluxApplication {
     public static void main(String[] args) {
-
-        // TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
-        // SpringApplication.run(KasarisuteTaskApplicaton.class, args);
+        
     }
-
 }

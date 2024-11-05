@@ -87,11 +87,14 @@ public class JwtTokenOncePerRequestFilter extends OncePerRequestFilter {
                 }
             };
 
-            SecurityUser securityUser = new SecurityUser();
-            securityUser.setUid(uid);
-            securityUser.setUserCode(userCode);
-            securityUser.setRoles(roles);
-            securityUser.setUserName(userName);
+            SecurityUser securityUser = new SecurityUser() {
+                {
+                    setUid(uid);
+                    setUserCode(userCode);
+                    setRoles(roles);
+                    setUserName(userName);
+                }
+            };
 
             UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(securityUser, null,
                     authorities);
