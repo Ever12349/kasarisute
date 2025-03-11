@@ -26,7 +26,7 @@ public class UserResponseException {
                     }
                 },
                 responseHeaders,
-                HttpStatus.UNAUTHORIZED);
+                HttpStatus.INTERNAL_SERVER_ERROR);
 
     }
 

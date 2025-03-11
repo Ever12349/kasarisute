@@ -45,3 +45,4 @@ kasarisute-admin/logs/info/log-info-2024-07-30.0.log
 kasarisute-admin/logs/warn/log-warn-2024-07-30.0.log
 logs/info/log-info-2024-07-30.0.log
 logs/warn/log-warn-2024-07-30.0.log
+kasarisute-admin/src/main/resources/application.yaml

@@ -7,12 +7,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.context.SecurityContextHolderStrategy;
-import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
-import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -50,10 +44,6 @@ public class UserServicesImp implements UserServices {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-    private SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
-    private final SecurityContextHolderStrategy securityContextHolderStrategy = SecurityContextHolder
-            .getContextHolderStrategy();
-
     //
     public UserlogReqInfo generateJwtReturnUser(User user) {
         UserlogReqInfo userloginReqInfo = new UserlogReqInfo();
@@ -148,12 +138,10 @@ public class UserServicesImp implements UserServices {
         if (userOptional.isPresent()) {
             // 用户存在
             User user = userOptional.get();
+
             UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(user.getUid(),
                     password);
-            Authentication authentication = authenticationManager.authenticate(token);
-            SecurityContext context = this.securityContextHolderStrategy.createEmptyContext();
-            context.setAuthentication(authentication);
-            this.securityContextRepository.saveContext(context, request, response);
+            authenticationManager.authenticate(token); //验证密码
 
             UserlogReqInfo jwtReturnUser = generateJwtReturnUser(user);
             

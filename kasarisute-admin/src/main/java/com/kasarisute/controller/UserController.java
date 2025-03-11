@@ -88,5 +88,4 @@ public class UserController {
                                 responseHttpHeaders,
                                 HttpStatus.OK);
         }
-
 }
